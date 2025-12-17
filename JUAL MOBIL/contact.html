@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - DSILVA GARAGE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">DSILVA GARAGE</div>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="inventory.html">Inventori</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="contact">
+    <h1>Hubungi Kami</h1>
+
+    <div class="contact-info">
+        <h2>Informasi Kontak</h2>
+        <p><strong>Alamat:</strong> Jl. Pariaman Sicincin No. 17A, Kota Pariaman, Indonesia</p>
+        <p><strong>Telepon:</strong> 082172074158</p>
+        <p><strong>Email:</strong> DsilvaGarage@gmail.com</p>
+        <p><strong>Jam Operasional:</strong> Senin - Sabtu: 09:00 - 18:00</p>
+    </div>
+
+    <div class="contact-form">
+        <h2>Kirim Pesan via WhatsApp</h2>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nama</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telepon</label>
+                <input type="tel" id="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Pesan</label>
+                <textarea id="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Kirim ke WhatsApp</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 JUAL MOBIL. Semua hak dilindungi.</p>
+    <p>Kontak: DsilvaGarage@gmail.com | Telepon: 082172074158</p>
+</footer>
+
+<!-- SCRIPT WHATSAPP -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappNumber = "6282172074158"; // nomor tujuan (tanpa 0)
+
+    const text =
+        "Halo DSILVA GARAGE,%0A%0A" +
+        "Nama: " + name + "%0A" +
+        "Email: " + email + "%0A" +
+        "Telepon: " + phone + "%0A%0A" +
+        "Pesan:%0A" + message;
+
+    const url = "https://wa.me/" + whatsappNumber + "?text=" + text;
+    window.open(url, "_blank");
+});
+</script>
+
+</body>
+</html>
